@@ -1,19 +1,27 @@
 "use client"
-import { UserButton } from '@clerk/nextjs';
+import { UserButton, useUser } from '@clerk/nextjs';
 import { Layers } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { checkAndAddUser } from '../action';
 
 type Props = {}
 
-export default function d({}: Props) {
+export default function Navbar({}: Props) {
     
     const pathName = usePathname();
+    const {user} = useUser();
     
     const navLinks = [
         {href:"/", label: "Factures"},
     ]
+
+    useEffect(() => {
+        if(user?.primaryEmailAddress?.emailAddress && user.fullName){
+            checkAndAddUser(user.primaryEmailAddress.emailAddress, user.fullName);
+        }
+    }, [user]);
 
     const isActiveLink = (href: string) => pathName.replace(/\/$/, '') === href.replace(/\/$/, '');
 
