@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Wrapper from "./component/Wrapper";
 
 export default function Home() {
   return (
-    <div >
-      <button className="btn btn-accent ">Test</button>
-    </div>
+    <Wrapper >
+      Test
+    </Wrapper>
   );
 }
