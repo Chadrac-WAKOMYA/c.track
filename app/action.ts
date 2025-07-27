@@ -1,8 +1,23 @@
 "use server"
 
 import prisma from "@/lib/prisma";
+import { randomBytes } from "crypto";
 
+const generateUniqueId = async () => {
+    let uniqueId;
+    let isUnique = false;
 
+    while (!isUnique) {
+        uniqueId = randomBytes(3).toString('hex'); // Generates a 6-character hex string
+        const existingFact = await prisma.invoice.findUnique({
+            where: { id : uniqueId }
+        });
+        if (!existingFact) {
+            isUnique = true;
+        }
+    }
+    return uniqueId;
+}
 
 export async function checkAndAddUser(email:string, name:string) {
     if(!email)return;
