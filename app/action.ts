@@ -35,8 +35,24 @@ export async function checkAndAddUser(email:string, name:string) {
 export async function createEmptyFact(email:string, name:string){
     try {
         const user = await prisma.user.findUnique({where: {email: email}});
+        const factID = await generateUniqueId() as string;
+        const newFact = await prisma.invoice.create({
+            // data:{
+            //     id: factID,
+            //     name:name,
+            //     userId: user?.id,                
+            //     issuerName: "", 
+            //     issuerAddress: "",
+            //     clientName:"",
+            //     clientAddress:"",
+            //     invoiceDate:"",
+            //     dueDate:"",
+            //     vatActive : false,
+            //     vatRate : 20
+            // }
+        });
 
     } catch (error) {
         console.error("Error creating empty fact:", error);        
     }
-}
+} 
