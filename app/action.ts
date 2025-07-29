@@ -37,19 +37,19 @@ export async function createEmptyFact(email:string, name:string){
         const user = await prisma.user.findUnique({where: {email: email}});
         const factID = await generateUniqueId() as string;
         const newFact = await prisma.invoice.create({
-            // data:{
-            //     id: factID,
-            //     name:name,
-            //     userId: user?.id,                
-            //     issuerName: "", 
-            //     issuerAddress: "",
-            //     clientName:"",
-            //     clientAddress:"",
-            //     invoiceDate:"",
-            //     dueDate:"",
-            //     vatActive : false,
-            //     vatRate : 20
-            // }
+            data:{
+                id: factID,
+                name:name,
+                userId: user?.id,                
+                issuerName: "", 
+                issuerAddress: "",
+                clientName:"",
+                clientAddress:"",
+                invoiceDate:"",
+                dueDate:"",
+                vatActive : false,
+                vatRate : 20
+            }
         });
 
     } catch (error) {
