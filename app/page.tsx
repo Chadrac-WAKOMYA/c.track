@@ -27,7 +27,10 @@ export default function Home() {
         modal.close()
       }
       confetti({
-
+        particleCount:100,
+        spread:70,
+        origin:{y:0.6},
+        zIndex:9999
       })
     } catch (error) {
       console.error("Erreur lors de la création de la facture",error)
@@ -67,6 +70,7 @@ export default function Home() {
             <button 
               className="btn btn-accent w-full"
               disabled = {!isNameValide || invoiceName.length === 0}
+              onClick={()=> handleCreateInvoice()}
             >
               Créer
             </button>

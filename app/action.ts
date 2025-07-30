@@ -39,7 +39,7 @@ export async function createEmptyFact(email:string, name:string){
         if(user){
             const newFact = await prisma.invoice.create({
             data:{
-                id: factID,
+                id: factID, 
                 name:name,
                 userId: user?.id,                
                 issuerName: "", 
