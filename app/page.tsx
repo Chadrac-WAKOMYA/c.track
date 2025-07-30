@@ -3,7 +3,7 @@ import { Layers } from "lucide-react";
 import Wrapper from "./component/Wrapper";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import { createEmptyFact } from "./action";
+import { createEmptyFact, getInvoiceByEmail } from "./action";
 import confetti from "canvas-confetti";
 
 export default function Home() {
@@ -11,6 +11,15 @@ export default function Home() {
   const [invoiceName, setInvoiceName] = useState("");
   const [isNameValide, setIsNameValide] = useState(false);
   const email = user?.primaryEmailAddress?.emailAddress as string;
+  
+  const fetchInvoices = async () => {
+    try {
+      const data = getInvoiceByEmail(email);
+    } catch (error) {
+      console.error("Erreur lors de la récupération des factures", error);      
+    }
+  }
+
   useEffect(()=>{
     setIsNameValide(invoiceName.length <= 40);
   },[invoiceName])
