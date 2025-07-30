@@ -2,14 +2,23 @@
 import { Layers } from "lucide-react";
 import Wrapper from "./component/Wrapper";
 import { useEffect, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
-
+  const {user} = useUser();
   const [invoiceName, setInvoiceName] = useState("");
   const [isNameValide, setIsNameValide] = useState(false);
   useEffect(()=>{
     setIsNameValide(invoiceName.length <= 40);
   },[invoiceName])
+
+  const handleCreateInvoice = async()=>{
+    try {
+      
+    } catch (error) {
+      console.error("Erreur lors de la création de la facture",error)
+    }
+  }
 
   return (
     <Wrapper >
