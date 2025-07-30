@@ -36,7 +36,8 @@ export async function createEmptyFact(email:string, name:string){
     try {
         const user = await prisma.user.findUnique({where: {email: email}});
         const factID = await generateUniqueId() as string;
-        const newFact = await prisma.invoice.create({
+        if(user){
+            const newFact = await prisma.invoice.create({
             data:{
                 id: factID,
                 name:name,
@@ -51,7 +52,7 @@ export async function createEmptyFact(email:string, name:string){
                 vatRate : 20
             }
         });
-
+        }
     } catch (error) {
         console.error("Error creating empty fact:", error);        
     }
