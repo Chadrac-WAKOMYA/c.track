@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
   const [invoiceName, setInvoiceName] = useState("");
-  const [isNameValide, setIsNameValide] = useState(true);
+  const [isNameValide, setIsNameValide] = useState(false);
   useEffect(()=>{
     setIsNameValide(invoiceName.length <= 40);
   },[invoiceName])
@@ -40,9 +40,14 @@ export default function Home() {
               value = {invoiceName}
               onChange={(e)=>setInvoiceName(e.target.value)}
             />
-            {!isNameValide && <p>Le nom ne peut pas dépasser 40 caractères</p>}
-            
-          </div>
+            {!isNameValide && <p className="mb-4 text-sm">Le nom ne peut pas dépasser 40 caractères</p>}
+            <button 
+              className="btn btn-accent w-full"
+              disabled = {!isNameValide || invoiceName.length === 0}
+            >
+              Créer
+            </button>
+          </div> 
         </dialog>
 
       </div>
