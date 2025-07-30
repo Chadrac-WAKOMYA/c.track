@@ -7,7 +7,9 @@ export default function Home() {
     <Wrapper >
       <div className="flex flex-col space-y-4">
         <h1 className="text-lg font-bold">Mes factures</h1>
-        <button className="btn" onClick={() => (document.getElementById('my_modal_3') as HTMLDialogElement).showModal()}>open modal</button>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="cursor-pointer border border-accent rounded-xl flex justify-center" onClick={() => (document.getElementById('my_modal_3') as HTMLDialogElement).showModal()}>open modal</div>
+        </div>        
         <dialog id="my_modal_3" className="modal">
           <div className="modal-box">
             <form method="dialog">
@@ -18,7 +20,6 @@ export default function Home() {
           </div>
         </dialog>
       </div>
-
     </Wrapper>
   );
 }
