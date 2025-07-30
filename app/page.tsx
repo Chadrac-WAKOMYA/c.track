@@ -3,18 +3,32 @@ import { Layers } from "lucide-react";
 import Wrapper from "./component/Wrapper";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import { createEmptyFact } from "./action";
+import confetti from "canvas-confetti";
 
 export default function Home() {
   const {user} = useUser();
   const [invoiceName, setInvoiceName] = useState("");
   const [isNameValide, setIsNameValide] = useState(false);
+  const email = user?.primaryEmailAddress?.emailAddress as string;
   useEffect(()=>{
     setIsNameValide(invoiceName.length <= 40);
   },[invoiceName])
 
   const handleCreateInvoice = async()=>{
     try {
-      
+      if(email){
+        await createEmptyFact(email, invoiceName);
+      }
+
+      setInvoiceName("")
+      const modal = document.getElementById('my_modal_3') as HTMLDialogElement
+      if(modal){
+        modal.close()
+      }
+      confetti({
+
+      })
     } catch (error) {
       console.error("Erreur lors de la création de la facture",error)
     }
