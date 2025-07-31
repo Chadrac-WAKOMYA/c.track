@@ -34,6 +34,7 @@ export async function checkAndAddUser(email: string, name: string) {
 }
 
 export async function createEmptyFact(email: string, name: string) {
+    if (!email) return;
     try {
         const user = await prisma.user.findUnique({ where: { email: email } });
         const factID = await generateUniqueId() as string;
@@ -60,6 +61,7 @@ export async function createEmptyFact(email: string, name: string) {
 }
 
 export async function getInvoiceByEmail(email: string) {
+    if (!email) return;
     try {
         const user = await prisma.user.findUnique({
             where: { email: email },

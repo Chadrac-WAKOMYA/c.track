@@ -1,6 +1,12 @@
 import React from 'react'
+import { Invoice } from '../types'
 
-const InvoiceComponent = () => {
+type InvoiceComponentProps = {
+    invoice : Invoice;
+    index : number;
+}
+
+const InvoiceComponent :React.FC<InvoiceComponentProps>= ({invoice, index}) => {
   return (
     <div>InvoiceComponent</div>
   )
