@@ -91,7 +91,7 @@ export async function getInvoiceByEmail(email: string) {
             );
             return updateInvoices;
         }
-    } catch (error) {
+    } catch (error) { 
         console.error("Error fetching invoices by email:", error);
     }
 }
