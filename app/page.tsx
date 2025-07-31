@@ -6,6 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { createEmptyFact, getInvoiceByEmail } from "./action";
 import confetti from "canvas-confetti";
 import { Invoice } from "./types";
+import InvoiceComponent from "./component/InvoiceComponent";
 
 export default function Home() {
   const { user } = useUser();
@@ -69,9 +70,7 @@ export default function Home() {
           </div>
           {invoices.length > 0 && (
             invoices.map((invoice, index) => (
-              <div key={index}>
-                {invoice.name}
-              </div>
+              <InvoiceComponent key={invoice.id} invoice={invoice} index={index} />
             ))
           )}
         </div>
