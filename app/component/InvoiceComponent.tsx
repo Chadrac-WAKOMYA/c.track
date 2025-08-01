@@ -80,6 +80,7 @@ const InvoiceComponent: React.FC<InvoiceComponentProps> = ({ invoice, index }) =
                     <div className='stat-value'>
                         <div>{calculateTotal()} $</div>
                     </div>
+                    <div className='stat-desc'>{invoice.name}</div>
                 </div>
             </div>
         </div>
