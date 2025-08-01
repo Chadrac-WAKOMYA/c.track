@@ -44,7 +44,14 @@ const getStatusBadge = (status: number) => {
                     <XCircle className='w-4' />
                     Impayée
                 </div>
-            ) 
+            )
+        default: 
+            return (
+                <div className='badge badge-lg '>
+                    <XCircle className='w-4' />
+                    Indéfinis
+                </div>
+            )
     }
 }
 
