@@ -58,7 +58,9 @@ const getStatusBadge = (status: number) => {
 const InvoiceComponent: React.FC<InvoiceComponentProps> = ({ invoice, index }) => {
 
     const calculateTotal = () => {
-        
+        const totalHT = invoice.lines.reduce((acc, line) => acc + (line.quantity * line.unitPrice), 0);
+        const totalVAT = invoice.vatActive ? totalHT * (invoice.vatRate / 100) : 0;
+        return totalHT + totalVAT;
     }
 
     return (
