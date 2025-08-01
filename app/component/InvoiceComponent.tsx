@@ -56,6 +56,11 @@ const getStatusBadge = (status: number) => {
 }
 
 const InvoiceComponent: React.FC<InvoiceComponentProps> = ({ invoice, index }) => {
+
+    const calculateTotal = () => {
+        
+    }
+
     return (
         <div className='bg-base-200/90 p-5 rounded-xl space-y-2 shadow'>
             <div className='flex justify-between items-center w-full'>
@@ -65,7 +70,16 @@ const InvoiceComponent: React.FC<InvoiceComponentProps> = ({ invoice, index }) =
                     href={`/invoice/${invoice.id}`}
                 >Plus<SquareArrowOutUpRight className='w-4' /></Link>
             </div>
-            <div></div>
+            <div className='w-full'>
+                <div className=''>
+                    <div className='stat-title'>
+                        <div className='uppercase text-sm'>fact-{invoice.id}</div>
+                    </div>
+                    <div className='stat-value'>
+                        <div>111 000 $</div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
