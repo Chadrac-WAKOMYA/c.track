@@ -50,7 +50,7 @@ export default function Home() {
         zIndex: 9999
       })
     } catch (error) {
-      console.error("Erreur lors de la création de la facture", error)
+      // console.error("Erreur lors de la création de la facture", error)
     }
   }
 
