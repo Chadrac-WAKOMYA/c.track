@@ -1,6 +1,6 @@
 import React from 'react'
 
-const page = () => {
+const page = ({params}:{params:Promise<{invoiceId:string}>}) => {
   return (
     <div>page</div>
   )
