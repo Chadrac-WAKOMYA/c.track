@@ -2,6 +2,7 @@
 import { getInvoiceById } from '@/app/action';
 import Wrapper from '@/app/component/Wrapper';
 import { Invoice } from '@/app/types';
+import { Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 
 const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
@@ -28,9 +29,28 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
     <Wrapper>
       <div>
         <div>
-          <p><span>Facture-</span>{invoice?.id}</p>
+          <p  className='badge badge-ghost badge-lg uppercase'>
+            <span>Facture -</span>{invoice?.id}
+          </p>
+          <div className='flex md:mt-0 mt-4 '>
+            <select 
+              className='select select-sm select-bordered w-full' 
+              name="" 
+              id=""
+              value={invoice?.status}
+            >
+              <option value={1}>Brouillon</option>
+              <option value={2}>En attente</option>
+              <option value={3}>Payée</option>
+              <option value={4}>Annulée</option>
+              <option value={5}>Impayée</option>
+            </select>
+          </div>
         </div>
-        <div></div>
+
+        <div>
+          
+        </div>
       </div>
     </Wrapper>
 
