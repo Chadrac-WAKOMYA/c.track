@@ -28,7 +28,7 @@ const InvoiceInfo : React.FC<Props> = ({invoice, setInvoice}) => {
                 value ={invoice?.issuerAddress}
                 placeholder="Adresse de l'entreprise émettrice"
                 className='textarea textarea-bordered w-full resize-none h-40'
-                aria-rowcount={5}
+                aria-rowcount={3}
                 onChange={(e) => handleInputChange(e, 'issuerAddress')}
             >
                 
@@ -47,7 +47,7 @@ const InvoiceInfo : React.FC<Props> = ({invoice, setInvoice}) => {
                 value ={invoice?.clientAddress}
                 placeholder="Adresse de l'entreprise cliente"
                 className='textarea textarea-bordered w-full resize-none h-40'
-                aria-rowcount={5}
+                aria-rowcount={3}
                 onChange={(e) => handleInputChange(e, 'clientAddress')}
             >
                 
