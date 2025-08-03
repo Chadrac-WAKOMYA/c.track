@@ -29,13 +29,13 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
     <Wrapper>
       <div>
         <div>
-          <p  className='badge badge-ghost badge-lg uppercase'>
+          <p className='badge badge-ghost badge-lg uppercase'>
             <span>Facture -</span>{invoice?.id}
           </p>
           <div className='flex md:mt-0 mt-4 '>
-            <select 
-              className='select select-sm select-bordered w-full' 
-              name="" 
+            <select
+              className='select select-sm select-bordered w-full'
+              name=""
               id=""
               value={invoice?.status}
             >
@@ -45,11 +45,13 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
               <option value={4}>Annulée</option>
               <option value={5}>Impayée</option>
             </select>
+            <button className='btn btn-sm btn-accent ml-4'>Sauvegarder</button>
+            <button><Trash className='w-4 ml-3 cursor-pointer' /></button>
           </div>
         </div>
 
-        <div>
-          
+        <div className='flex mt-4 items-center'>
+
         </div>
       </div>
     </Wrapper>
