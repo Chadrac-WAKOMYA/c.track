@@ -78,7 +78,7 @@ const InvoiceComponent: React.FC<InvoiceComponentProps> = ({ invoice, index }) =
                         <div className='uppercase text-sm'>fact-{invoice.id}</div>
                     </div>
                     <div className='stat-value'>
-                        <div>{calculateTotal()} $</div>
+                        <div>{calculateTotal().toFixed(2)} $</div>
                     </div>
                     <div className='stat-desc'>{invoice.name}</div>
                 </div>
