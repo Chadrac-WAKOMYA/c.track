@@ -1,7 +1,9 @@
+"use client"
 import React from 'react'
 import { Invoice } from '../types'
 import Link from 'next/link';
 import { CheckCircle, Clock, FileText, SquareArrowOutUpRight, XCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 type InvoiceComponentProps = {
     invoice: Invoice;
@@ -9,6 +11,7 @@ type InvoiceComponentProps = {
 }
 
 const getStatusBadge = (status: number) => {
+    
     switch(status) {
         case 1:
             return (
@@ -63,14 +66,17 @@ const InvoiceComponent: React.FC<InvoiceComponentProps> = ({ invoice, index }) =
         return totalHT + totalVAT;
     }
 
+    const router = useRouter();
+
     return (
         <div className='bg-base-200/90 p-5 rounded-xl space-y-2 shadow'>
             <div className='flex justify-between items-center w-full'>
                 {getStatusBadge(invoice.status)}
-                <Link
+                <button
                     className='btn btn-sm btn-accent'
-                    href={`/invoice/${invoice.id}`}
-                >Plus<SquareArrowOutUpRight className='w-4' /></Link>
+                    // href={`/invoice/${invoice.id}`}
+                    onClick={() => router.push(`/invoice/${invoice.id}`)}
+                >Plus<SquareArrowOutUpRight className='w-4' /></button>
             </div>
             <div className='w-full'>
                 <div className=''>
