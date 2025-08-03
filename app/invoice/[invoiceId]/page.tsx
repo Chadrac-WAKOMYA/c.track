@@ -1,6 +1,7 @@
 "use client";
 import { getInvoiceById } from '@/app/action';
 import InvoiceInfo from '@/app/component/InvoiceInfo';
+import VATControl from '@/app/component/VATControl';
 import Wrapper from '@/app/component/Wrapper';
 import { Invoice } from '@/app/types';
 import { Trash } from 'lucide-react';
@@ -58,6 +59,7 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
             <div className='mb-4 bg-base-200 rounded-xl p-5'>
               <div>
                 <div className='badge badge-accent'>Résumé de totaux</div>
+                <VATControl invoice={invoice} setInvoice={setInvoice}/>
               </div>
             </div>
             <InvoiceInfo invoice={invoice} setInvoice={setInvoice}/>
