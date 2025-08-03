@@ -26,6 +26,8 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
     fetchInvoice();
   }, []);
 
+  if(!invoice) {return <div className='flex justify-center items-center'>Facture non trouvée</div>}
+
   return (
     <Wrapper>
       <div>
@@ -53,6 +55,7 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
 
         <div>
           <div className='flex w-full md:w-1/3 flex-col'>
+            <div></div>
             <InvoiceInfo invoice={invoice} setInvoice={setInvoice}/>
           </div>
           <div className='flex w-full md:w-1/3 flex-col'></div>
