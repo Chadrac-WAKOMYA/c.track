@@ -1,5 +1,6 @@
 "use client";
 import { getInvoiceById } from '@/app/action';
+import InvoiceInfo from '@/app/component/InvoiceInfo';
 import Wrapper from '@/app/component/Wrapper';
 import { Invoice } from '@/app/types';
 import { Trash } from 'lucide-react';
@@ -51,7 +52,9 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
         </div>
 
         <div>
-          <div className='flex w-full md:w-1/3 flex-col'></div>
+          <div className='flex w-full md:w-1/3 flex-col'>
+            <InvoiceInfo invoice={invoice} setInvoice={setInvoice}/>
+          </div>
           <div className='flex w-full md:w-1/3 flex-col'></div>
         </div>
       </div>
