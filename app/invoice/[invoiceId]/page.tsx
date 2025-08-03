@@ -28,7 +28,7 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
   return (
     <Wrapper>
       <div>
-        <div>
+        <div className='flex flex-col md:flex-row md:justify-between md:items-center mb-4'>
           <p className='badge badge-ghost badge-lg uppercase'>
             <span>Facture -</span>{invoice?.id}
           </p>
@@ -46,12 +46,13 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
               <option value={5}>Impayée</option>
             </select>
             <button className='btn btn-sm btn-accent ml-4'>Sauvegarder</button>
-            <button><Trash className='w-4 ml-3 cursor-pointer' /></button>
+            <button className='btn btn-sm btn-accent ml-4'><Trash className='w-4' /></button>
           </div>
         </div>
 
-        <div className='flex mt-4 items-center'>
-
+        <div>
+          <div className='flex w-full md:w-1/3 flex-col'></div>
+          <div className='flex w-full md:w-1/3 flex-col'></div>
         </div>
       </div>
     </Wrapper>
