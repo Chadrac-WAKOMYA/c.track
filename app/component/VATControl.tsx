@@ -8,11 +8,10 @@ interface Props  {
 
 const VATControl: React.FC<Props> = ({invoice, setInvoice}) => {
   return (
-    <div className='flex items-center'>
-        <label className="block text-sm font-bold">TVA (%)</label>
-    </div>
-
-
+    // <div className='flex items-center'>
+    //     <label className="block text-sm font-bold">TVA (%)</label>
+    // </div>
+    <></>
   )
 }
 
