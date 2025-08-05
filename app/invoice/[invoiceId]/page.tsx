@@ -57,14 +57,14 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
         <div>
           <div className='flex w-full md:w-1/3 flex-col'>
             <div className='mb-4 bg-base-200 rounded-xl p-5'>
-              <div>
+              <div className='flex justify-between items-center mb-4'>
                 <div className='badge badge-accent'>Résumé de totaux</div>
                 <VATControl invoice={invoice} setInvoice={setInvoice}/>
               </div>
             </div>
             <InvoiceInfo invoice={invoice} setInvoice={setInvoice}/>
           </div>
-          <div className='flex w-full md:w-1/3 flex-col'></div>
+          <div className='flex w-full md:w-2/3 flex-col'></div>
         </div>
       </div>
     </Wrapper>
