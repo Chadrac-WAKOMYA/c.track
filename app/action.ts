@@ -97,3 +97,20 @@ export async function getInvoiceByEmail(email: string) {
         console.error("Error fetching invoices by email:", error);
     }
 }
+
+export async function getInvoiceById(invoiceId: string) {
+    if (!invoiceId) return;
+    try {
+        const invoice = await prisma.invoice.findUnique({
+            where: { id: invoiceId },
+            include: { lines: true }
+        });
+        if (!invoice) {
+            throw new Error("Invoice not found");
+        }
+        
+        return invoice;
+    } catch (error) {
+        console.error("Error fetching invoice by ID:", error);
+    }
+}
