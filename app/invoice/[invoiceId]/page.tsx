@@ -64,7 +64,9 @@ const page = ({ params }: { params: Promise<{ invoiceId: string }> }) => {
             </div>
             <InvoiceInfo invoice={invoice} setInvoice={setInvoice}/>
           </div>
-          <div className='flex w-full md:w-2/3 flex-col'></div>
+          <div className='flex w-full md:w-2/3 flex-col'>
+            
+          </div>
         </div>
       </div>
     </Wrapper>
