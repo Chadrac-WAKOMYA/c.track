@@ -26,10 +26,35 @@ const InvoiceLines: React.FC<Props> = ({ invoice, setInvoice }) => {
                         {
                             invoice.lines.map((line, index) => (
                                 <tr key={index}>
-                                    <td>{line.quantity}</td>
-                                    <td>{line.description}</td>
-                                    <td>{line.unitPrice.toFixed(2)} $</td>
-                                    <td>{(line.quantity * line.unitPrice).toFixed(2)} $</td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            className='input input-sm input-bordered w-full'
+                                            value={line.quantity}
+                                            min={0}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            className='input input-sm input-bordered w-full'
+                                            value={line.description}
+                                            min={0}
+                                        />
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            className='input input-sm input-bordered w-full'
+                                            value={line.unitPrice}
+                                            min={0}
+                                            step={0.01}
+                                        />
+                                    </td>
+                                    <td className='font-bold'>
+                                        {(line.quantity * line.unitPrice).toFixed(2)}
+                                    </td>
+                                    
                                 </tr>
                             ))
                         }
