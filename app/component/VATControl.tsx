@@ -17,6 +17,16 @@ const VATControl: React.FC<Props> = ({ invoice, setInvoice }) => {
         });
     }
 
+    const handleVATRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newRate = parseFloat(e.target.value);
+        if (!isNaN(newRate)) {
+            setInvoice({
+                ...invoice,
+                vatRate: newRate,
+            });
+        }
+    }
+
     return (
         <div className='flex items-center'>
             <label className="block text-sm font-bold">TVA (%)</label>
