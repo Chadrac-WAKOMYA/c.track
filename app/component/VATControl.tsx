@@ -10,11 +10,11 @@ const VATControl: React.FC<Props> = ({ invoice, setInvoice }) => {
 
     const handleVATChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const isChecked = e.target.checked;
-        setInvoice({
-            ...invoice,
-            vatActive: isChecked,
-            vatRate: isChecked ? invoice.vatRate : 0, // Reset VAT rate if unchecked
-        });
+        // setInvoice({
+        //     ...invoice,
+        //     vatActive: isChecked,
+        //     vatRate: isChecked ? invoice.vatRate : 0, // Reset VAT rate if unchecked
+        // });
     }
 
     const handleVATRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
