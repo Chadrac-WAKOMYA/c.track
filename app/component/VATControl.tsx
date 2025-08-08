@@ -9,7 +9,7 @@ interface Props {
 const VATControl: React.FC<Props> = ({ invoice, setInvoice }) => {
 
     const handleVATChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const isChecked = e.target.checked;
+        // const isChecked = e.target.checked;
         // setInvoice({
         //     ...invoice,
         //     vatActive: isChecked,
