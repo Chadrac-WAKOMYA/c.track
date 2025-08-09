@@ -1,12 +1,12 @@
 "use client"
 import { Layers } from "lucide-react";
-import Wrapper from "./component/Wrapper";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import { createEmptyFact, getInvoiceByEmail } from "./action";
+import { createEmptyFact, getInvoiceByEmail } from "../utils/action";
 import confetti from "canvas-confetti";
-import { Invoice } from "./types";
-import InvoiceComponent from "./component/InvoiceComponent";
+import { Invoice } from "../types";
+import Wrapper from "@/component/Wrapper";
+import InvoiceComponent from "@/component/InvoiceComponent";
 
 export default function Home() {
   const { user } = useUser();

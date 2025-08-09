@@ -1,10 +1,10 @@
 "use client"
+import { checkAndAddUser } from '@/utils/action';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Layers } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
-import { checkAndAddUser } from '../action';
 
 type Props = {}
 

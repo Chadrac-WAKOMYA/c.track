@@ -1,7 +1,7 @@
 import React from 'react'
-import { Invoice } from '../types';
 import { Plus, Trash } from 'lucide-react';
 import { InvoiceLine } from '@prisma/client';
+import { Invoice } from '@/types';
 
 interface Props {
     invoice: Invoice;
@@ -12,8 +12,8 @@ const InvoiceLines: React.FC<Props> = ({ invoice, setInvoice }) => {
 
     const handleAddLine = () => {
         const newLine:InvoiceLine = {
-            id: Date.now().toString(),            
-            description: '',
+            id: `${Date.now()}`, // Unique ID for the new line     
+            description: "",
             quantity: 1,
             unitPrice: 0,
             invoiceId: invoice.id,
@@ -49,10 +49,10 @@ const InvoiceLines: React.FC<Props> = ({ invoice, setInvoice }) => {
                                 <tr key={line.id}>
                                     <td>
                                         <input
-                                            type="number"
-                                            className='input input-sm input-bordered w-full'
-                                            value={line.quantity}
-                                            min={0}
+                                            // type="number"
+                                            // className='input input-sm input-bordered w-full'
+                                            // value={line.quantity}
+                                            // min={0}
                                         />
                                     </td>
                                     <td>

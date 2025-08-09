@@ -1,10 +1,10 @@
 "use client";
-import { getInvoiceById } from '@/app/action';
-import InvoiceInfo from '@/app/component/InvoiceInfo';
-import InvoiceLines from '@/app/component/InvoiceLines';
-import VATControl from '@/app/component/VATControl';
-import Wrapper from '@/app/component/Wrapper';
-import { Invoice } from '@/app/types';
+import { getInvoiceById } from '@/utils/action';
+import InvoiceInfo from '@/component/InvoiceInfo';
+import InvoiceLines from '@/component/InvoiceLines';
+import VATControl from '@/component/VATControl';
+import Wrapper from '@/component/Wrapper';
+import { Invoice } from '@/types';
 import { Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 
