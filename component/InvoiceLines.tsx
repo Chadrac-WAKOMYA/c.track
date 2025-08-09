@@ -1,7 +1,7 @@
 import React from 'react'
 import { Plus, Trash } from 'lucide-react';
 import { InvoiceLine } from '@prisma/client';
-import { Invoice } from '@/app/types';
+import { Invoice } from '@/types';
 
 interface Props {
     invoice: Invoice;

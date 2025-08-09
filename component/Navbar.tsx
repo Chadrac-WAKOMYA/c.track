@@ -1,5 +1,5 @@
 "use client"
-import { checkAndAddUser } from '@/app/action';
+import { checkAndAddUser } from '@/utils/action';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { Layers } from 'lucide-react';
 import Link from 'next/link';
