@@ -49,10 +49,10 @@ const InvoiceLines: React.FC<Props> = ({ invoice, setInvoice }) => {
                                 <tr key={line.id}>
                                     <td>
                                         <input
-                                            // type="number"
-                                            // className='input input-sm input-bordered w-full'
-                                            // value={line.quantity}
-                                            // min={0}
+                                            type="number"
+                                            className='input input-sm input-bordered w-full'
+                                            value={line.quantity}
+                                            min={0}
                                         />
                                     </td>
                                     <td>
@@ -78,7 +78,8 @@ const InvoiceLines: React.FC<Props> = ({ invoice, setInvoice }) => {
                                     <td>
                                         <button className='btn btn-sm btn-accent btn-circle'>
                                             <Trash className='w-4'/>
-                                        </button></td>
+                                        </button>
+                                    </td>
 
                                 </tr>
                             ))
