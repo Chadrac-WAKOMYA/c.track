@@ -98,7 +98,6 @@ export default function Home() {
             </button>
           </div>
         </dialog>
-
       </div>
     </Wrapper>
   );
