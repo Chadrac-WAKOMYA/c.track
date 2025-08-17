@@ -14,7 +14,7 @@ model User {
   id                String @id @default(uuid())
   name              String
   email             String @unique
-  // invoices          Invoice[] @relation("UserInvoices")
+  invoices          Invoice[] @relation("UserInvoices")
 }
 
 
