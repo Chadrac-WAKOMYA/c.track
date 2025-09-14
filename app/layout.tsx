@@ -15,7 +15,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "C.Fact",
-  description: "This is the programming's langage pratice",
+  // description: "This is the programming's langage pratice",
 };
 
 export default function RootLayout({
