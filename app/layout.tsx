@@ -8,14 +8,14 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "C.Fact",
-  // description: "This is the programming's langage pratice",
+  description: "This is the programming's langage pratice",
 };
 
 export default function RootLayout({
